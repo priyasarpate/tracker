@@ -1,12 +1,15 @@
-import Example from "./Example";
-import Example2 from "./Example2";
+
+import Email from "./auth/Email";
+import MobileNumber from "./auth/MobileNumber";
+import VerifyNumber from "./auth/VerifyNumber";
 
 
 export default function App() {
   return (
     <>
-      {/* <Example /> */}
-      <Example2/>
+    {/* <MobileNumber /> */}
+    <VerifyNumber />
+      {/* <Email /> */}
     </>
   );
 }

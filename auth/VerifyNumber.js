@@ -8,31 +8,33 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import OTP from "./OTP"
 
-export default function Example() {
+export default function VerifyNumber() {
   return (
     <ScrollView
       automaticallyAdjustKeyboardInsets={true}
       style={styles.scrollView}
     >
-      <View style={styles.container}>
+      <View style={styles.otpContainer}>
         <Image
-          source={require("./assets/welcome_img.png")}
+          source={require("../assets/welcome_img.png")} // Replace 'assets' with the actual folder where your image is located
           style={{ width: 200, height: 200 }}
         />
-        <Text style={styles.heading}>welcome beautiful, {"\n"}lady!</Text>
-        <Text style={styles.loginText}>
-          please enter to login and signup in maitreyee
+        <Text style={styles.confirm}>confirmation code</Text>
+        <Text style={styles.otpConfirm}>
+         enter the one time code sent to the number 999999999
         </Text>
-        <TextInput placeholder="+91 9999999999" style={styles.mobileNumber} />
+        {/* <TextInput placeholder="enter code" style={styles.otpNumber} /> */}
+        <OTP />
         <TouchableOpacity
-          style={styles.mobileBtn}
+          style={styles.otpBtn}
           onPress={() => console.log("Button Pressed")}
         >
-          <Text style={styles.buttonText}>login</Text>
+          <Text style={styles.otpText}>verify code </Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.joinNow}>don't have accoun? join now</Text>
+          <Text style={styles.correct}> 🔙 correct the number</Text>
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
@@ -45,25 +47,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFD7F0",
   },
-  container: {
+  otpContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
-    paddingTop: 100,
+    paddingTop: 150,
   },
-  heading: {
+  confirm: {
     fontSize: 34,
     textAlign: "center",
     color: "#3E1B40"
   },
-  loginText: {
+  otpConfirm: {
     fontSize: 20,
-    marginTop: 100,
+    marginTop: 50,
     color: "#5C5470",
     padding: 15,
+    textAlign: "center"
 
   },
-  mobileNumber: {
+  otpNumber: {
     width: "80%",
     height: 50,
     backgroundColor: "#FFF",
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
     borderColor: "#D3D3D3",
     fontSize: 16,
   },
-  mobileBtn: {
+  otpBtn: {
     width: "80%",
     height: 50,
     backgroundColor: "#D95582",
@@ -83,12 +86,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 15,
   },
-  buttonText: {
+  otpText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "white",
   },
-  joinNow: {
+  correct: {
     fontSize: 18,
     fontWeight: "bold",
     color:"#D95582",
