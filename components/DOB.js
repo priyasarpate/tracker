@@ -5,7 +5,7 @@ export default function DOB() {
     <View style={styles.container}>
       <View>
         <Text>
-            add date of birth
+            add date of birth..
         </Text>
       </View>
     </View>
